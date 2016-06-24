@@ -3,6 +3,18 @@ header-img:  # header-img.png
 email: 390517426@qq.com # your email
 keyword:  # your keywords
 
+# Navigator of blog
+# No need for adding a home page, it is added by default
+nav: 
+  - name: 归档
+    url: archives/index.html
+  - name: 留言板
+    url: guestbook/index.html
+  - name: 关于
+    url: about/index.html
+  - name: RSS
+    url: atom.xml
+
 # SNS settings
 # replace usernames with yours
 weibo_username: 
@@ -14,8 +26,10 @@ linkedin_username:
 
 # Sidebar settings
 sidebar: true
-sidebar-about-description: "your description here"
+sidebar-about-description: 
 sidebar-avatar: 
+
+site_search: true
 
 # Build settings
 # if you want to customize anchor. check out line:181 of `post.html`
@@ -53,14 +67,17 @@ post-default-img: your-custom-img.jpg
 
 # If you want to show word count, set to true
 # This function requires hexo-wordcount
-use_word_count: true
+word_count: true
+
+# Set the length of preview text
+preview_length: 50
 
 # Featured tag settings
-featured-tags: false
+featured-tags: true
 # A tag will be featured if the size of it is more than this value
 featured-condition-size: 1
 
-# 
+# Links
 friends:
   - title: Tony
     url: https://tonyzzx.github.io

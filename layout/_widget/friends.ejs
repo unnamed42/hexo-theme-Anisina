@@ -1,6 +1,6 @@
 <% if(theme.friends) { %>
-<hr>
 <h5><%- __('friends') %></h5>
+<hr>
 <ul class="list-inline">
     <% theme.friends.forEach(function(friend){ %>
         <li><a href="<%= friend['url'] %>"><%= friend['title'] %></a></li>

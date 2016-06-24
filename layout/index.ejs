@@ -22,7 +22,7 @@ layout: page
         <% } %>
         <div class="post-content-preview">
             <p>
-                <%- truncate(strip_html(post.content), {length: 150, omission: '...'})%>
+                <%- truncate(strip_html(post.content), {length: theme['preview_length'], omission: '...'})%>
             </p>
         </div>
     </a>

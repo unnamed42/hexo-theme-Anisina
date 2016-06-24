@@ -28,7 +28,6 @@ layout: layout
                             Posted by <%- page.author || config.author %> on
                             <%= page.date.format(config.date_format) %>
                         </span>
-                        
                     </div>
                 </div>
             </div>
@@ -53,7 +52,17 @@ layout: layout
                 <%- partial('_partial/comment') %>
             </div>
             <!-- Sidebar Container -->
-            <%- partial('_partial/sidebar') %>
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+                <!-- Featured Tags -->
+                <%- partial('_widget/featured_tag.ejs') %>
+                <!-- Friends Blog -->
+                <%- partial('_widget/friends.ejs') %>
+                <!-- Site search -->
+                <%- partial('_widget/site_search.ejs') %>
+            </div>
         </div>
     </div>
 </article>

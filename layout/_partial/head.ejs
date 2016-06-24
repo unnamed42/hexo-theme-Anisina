@@ -2,13 +2,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% if(config.description) { %>
     <meta name="description" content="<%= config.description %>">
+    <% } %>
+    <% if(theme.keyword) { %>
     <meta name="keyword"  content="<%= theme.keyword %>">
-    <link rel="shortcut icon" href="<%= config.root %>img/coffee.png">
+    <% } %>
+    <!-- I don't know how to modify this -->
+    <!--<link rel="shortcut icon" href="<%= config.root %>img/coffee.png">-->
 
     <title>
         <% if (page.title) { %>
-          <%= page.title + '｜' + config.title %>
+          <%= page.title + ' | ' + config.title %>
         <% } else {%>
           <%= config.title %>
         <% } %>
