@@ -3,6 +3,23 @@ header-img:  # header-img.png
 email: 390517426@qq.com # your email
 keyword:  # your keywords
 
+# Navigator of blog
+# No need for adding a home page, it is added by default
+# Name of icon must exist in Font Awesome
+nav: 
+  - name: 归档
+    url: archives/index.html
+    icon: fa-archive
+  - name: 留言板
+    url: guestbook/index.html
+    icon: fa-comment
+  - name: 关于
+    url: about/index.html
+    icon: fa-user
+  - name: RSS
+    url: atom.xml
+    icon: fa-rss-square
+
 # SNS settings
 # replace usernames with yours
 weibo_username: 
@@ -14,18 +31,22 @@ linkedin_username:
 
 # Sidebar settings
 sidebar: true
-sidebar-about-description: "your description here"
+sidebar-about-description: 
 sidebar-avatar: 
 
-# Build settings
-# if you want to customize anchor. check out line:181 of `post.html`
-anchorjs: false
+# Set to true to use jQuery based off-line search
+# This function requires hexo-generator-search
+site_search: true
+
+# Recent contents
+list_categories: true
+recent_posts: true
+recent_comments: true
 
 # Disqus settings 
 disqus_username: 
-
 # Duoshuo settings
-duoshuo_username: 
+duoshuo_username: unnamed42-github
 # Share depends on Comment so can NOT use share only.
 # set to false if you want to disable Sharing.
 duoshuo_share: false
@@ -49,18 +70,25 @@ clip-post: "?" # you can custom post width and height
 clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
 
 # post default images
-post-default-img: your-custom-img.jpg
+post-default-img: 
 
 # If you want to show word count, set to true
 # This function requires hexo-wordcount
-use_word_count: true
+word_count: true
+
+# Set the length of preview text
+preview_length: 50
 
 # Featured tag settings
-featured-tags: false
+featured-tags: true
 # A tag will be featured if the size of it is more than this value
 featured-condition-size: 1
 
-# 
+# Links
 friends:
   - title: Tony
     url: https://tonyzzx.github.io
+
+# Build settings
+# if you want to customize anchor. check out line:181 of `post.html`
+anchorjs: false

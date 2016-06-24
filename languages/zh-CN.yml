@@ -1,3 +1,5 @@
+home: 主页
+categories: 所有分类
 author: 作者
 date: 日期
 prev: 上一页
@@ -7,7 +9,7 @@ next_post: 下一篇文章
 search: 站内搜索
 untitled: 未命名
 share_to: 分享到
-weixin: 微信
+wechat: 微信
 weibo: 微博
 douban: 豆瓣
 friends: 友情链接
@@ -15,3 +17,6 @@ work_collection: 个人作品集
 word_count: 本文字数
 open_it: 打开
 not_found: 您请求的内容不存在
+copyright: 版权所有
+recent_comments: 最近评论
+recent_posts: 最近文章

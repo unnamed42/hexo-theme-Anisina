@@ -1,0 +1,14 @@
+<% if(theme['recent_posts']) { %>
+    <% if (site.posts.length){ %>
+    <div class="categorieslist">
+        <h5 class="recent_posts"><i class="fa fa-file-o"><%- __('recent_posts') %></i></h5>
+        <ul>
+            <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+            <li>
+                <a href="<%- config.root %><%- post.path %>"><%= post.title || __('untitled') %></a>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+    <% } %>
+<% } %>

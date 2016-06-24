@@ -56,6 +56,29 @@
     padding-left: 0;
 }
 
+#local-search-result {
+  overflow:auto;
+  max-height:3in;
+}
+
+ul.search-result-list {
+  padding-left: 10px;
+}
+a.search-result-title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #555;
+}
+p.search-result {
+  color: #444;
+  text-align: justify;
+}
+em.search-keyword {
+  font-weight: bold;
+  font-style: normal;
+  color: #ff471a;
+}
+
 body {
     line-height: 1.7;
     font-size: 16px;

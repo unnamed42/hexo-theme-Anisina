@@ -42,6 +42,8 @@ layout: layout
 
                 <!-- About Me -->
                 <section class="visible-md visible-lg" style="padding: 0 18px">
+                    <%- partial('_widget/site_search') %>
+                    <p>
                     <div class="short-about">
                         <!--侧边栏头像-->
                         <% if(theme['sidebar-avatar']) { %>
@@ -70,8 +72,11 @@ layout: layout
                         <% }) %>
                     </div>
                 </section>
-                <% }%>
-
+                <% } %>
+                <%- partial('_widget/categories') %>
+                <%- partial('_widget/recent_posts')%>
+                <%- partial('_widget/recent_comments') %>
+                <%- partial('_widget/friends') %>
             </div>
     </div>
 </div>
