@@ -1,0 +1,20 @@
+<% if(theme['featured-tags']) { %>
+<section>
+<!-- no hr -->
+<% if(is_post()) {%>
+    <h5 class="text-center">
+        <a href="<%= config.root %>tags/"><%- __('featured_tags') %></a>
+    </h5>
+        <div class="tags">
+            <% page.tags.forEach(function(tag){ %>
+            <a class="tag" href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>"><%= tag.name %></a>
+            <% }) %>
+        </div>
+<% } else { %>
+    <h5><a href="<%= config.root %>tags/"><%- __('featured_tags') %></a></h5>
+    <div class="tags">
+        <%- list_tags({style: '', class: '', show_count: false, separator: ''}) %>
+    </div>
+<% } %>
+</section>
+<% }%>

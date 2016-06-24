@@ -3,14 +3,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%= config.description %>">
-    <meta name="keyword"  content="<%= config.keyword %>">
+    <meta name="keyword"  content="<%= theme.keyword %>">
     <link rel="shortcut icon" href="<%= config.root %>img/coffee.png">
 
     <title>
         <% if (page.title) { %>
-          <%= page.title + '｜' + config.SEOTitle %>
-        <% } else{%>
-          <%= config.SEOTitle %>
+          <%= page.title + '｜' + config.title %>
+        <% } else {%>
+          <%= config.title %>
         <% } %>
     </title>
 

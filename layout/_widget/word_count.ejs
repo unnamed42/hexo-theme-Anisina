@@ -1,0 +1,4 @@
+<% if(theme['use_word_count'])  {%>
+<hr>
+<span class="post-count"><%- __('word_count')%>：<%= wordcount(page.content) %></span>
+<% } %>
