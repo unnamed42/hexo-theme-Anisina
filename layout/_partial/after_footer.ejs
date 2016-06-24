@@ -7,6 +7,13 @@
 <!-- Custom Theme JavaScript -->
 <%- js('js/blog.js') %>
 
+<!-- Smooth scroll on same page, using jQuery -->
+<%- js('js/smoothscroll') %>
+
+<!-- Totop -->
+<%- partial('_partial/totop')%>
+<%- js('js/totop') %>
+
 <!-- Site search JS -->
 <% if(theme['site_search']) { %>
 <%- js('js/search.js') %>

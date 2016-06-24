@@ -12,9 +12,6 @@ layout: page
         <h2 class="post-title">
             <%- post.title || __('untitiled') %>
         </h2>
-        <p class="post-meta">
-            <%= post.date.format(config.date_format) %>
-        </p>
         <% if (post.subtitle && post.subtitle.length) { %>
             <h3 class="post-subtitle">
                 <%- post.subtitle %>
@@ -22,9 +19,22 @@ layout: page
         <% } %>
         <div class="post-content-preview">
             <p>
-                <%- truncate(strip_html(post.content), {length: 150, omission: '...'})%>
+                <% if(post.excerpt) { %>
+                    <%- post.excerpt %>
+                <% } else { %>
+                    <% var br = post.content.indexOf('\n') %>
+                    <% if(br < 0 || !is_home()) { %>
+                        <%- post.content %>
+                    <% } else { %>
+                        <%- post.content.substring(0, br) %>
+                    <% } %>
+                <% } %>
             </p>
         </div>
+        <p class="post-meta">
+            Posted by <%- post.author || config.author %> on
+            <%= post.date.format(config.date_format) %>
+        </p>
     </a>
 
 </div>

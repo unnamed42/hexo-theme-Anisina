@@ -1,0 +1,64 @@
+---
+layout: layout
+---
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading text-center">
+                    <h1><%= page.title || config.title %></h1>
+                    <span class="subheading"><%= page.description || config.subtitle || "" %></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<%
+    var year, month;
+    var last_year = 1970;
+    var is_first_year = 1;
+%>                  
+<article>
+    <div class="container">
+        <div class="row">
+                <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <div class="archive">
+                <% site.posts.sort('date', -1).each(function(item){ %>
+                    <%
+                        year = item.date.toDate().getFullYear();
+                        month = item.date.toDate().getMonth();  
+                    %>
+                    <% if (year != last_year){ %>
+                        <% if (!is_first_year) { %>
+                        </ul>
+                        <% } %>
+                        <% is_first_year = 0 %>
+                            <h4 class="archive-ul" data-toggle="collapse" data-target="#<%= year %>"><%= year %><b class="caret"></b></h4>
+                            <ul id="<%= year %>" class="collapse in">
+                        <% last_year = year; %>
+                    <% } %>
+                    <li class="listing-item">
+                    <span class="date_class"> <%= item.date.format("YYYY-MM-DD") %> </span> &raquo;
+                    <% if (item.link){ %>
+                        <% if (item.title){ %>
+                        <span class="title link"><a href="<%- item.link %>" target="_blank" <% if (item.description) { %> title="<%= item.description %>" <% } %>><%= item.title %></a></span>
+                        <% } else { %>
+                        <span class="title link"><a href="<%- item.link %>" target="_blank" <% if (item.description) { %> title="<%= item.description %>" <% } %>><%= item.link %></a></span>
+                        <% } %>
+                    <% } else { %>
+                    <span class="title"><a href="<%- config.root %><%- item.path %>" <% if (item.description) { %> title="<%= item.description %>" <% } %>><%= item.title %></a></span>
+                    <% } %>
+                    </li>
+                <% }); %>
+                </ul>
+                </div>
+                <%- partial('_partial/comment') %>
+            </div>
+        </div>
+    </div>
+</article>
+<%- partial('_partial/pagination')%>

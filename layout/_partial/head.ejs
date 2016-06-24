@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%= config.description %>">
-    <meta name="keyword"  content="<%= theme.keyword %>">
+    <% if(theme.keyword){ %><meta name="keyword" content="<%= theme.keyword %>"><% } %>
     <link rel="shortcut icon" href="<%= config.root %>img/coffee.png">
 
     <title>
@@ -18,13 +18,13 @@
 
     <!-- Bootstrap Core CSS -->
     <%- css('css/bootstrap.min.css') %>
-
     <!-- Custom CSS -->
     <%- css('css/blog-style.css') %>
-
     <!-- Pygments Github CSS -->
     <%- css('css/syntax') %>
-
+    <!-- Beautiful buttons -->
+    <%- css('css/buttons') %>
+    
     <!-- Custom Fonts -->
     <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 

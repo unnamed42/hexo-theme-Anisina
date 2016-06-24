@@ -21,13 +21,8 @@ layout: layout
                               <a class="tag" href="<%= config.root %><%= tag.path %>" title="<%= tag.name %>"><%= tag.name %></a>
                             <% }) %>
                         </div>
-
                         <h1><%= page.title %></h1>
                         <h2 class="subheading"><%= page.subtitle %></h2>
-                        <span class="meta">
-                            Posted by <%- page.author || config.author %> on
-                            <%= page.date.format(config.date_format) %>
-                        </span>
                     </div>
                 </div>
             </div>
@@ -39,16 +34,13 @@ layout: layout
 <article>
     <div class="container">
         <div class="row">
-
     <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
-
                 <%- page.content %>
                 <hr>
-
                 <%- partial('_partial/comment') %>
             </div>
             <!-- Sidebar Container -->

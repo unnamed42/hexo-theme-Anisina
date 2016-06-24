@@ -32,7 +32,7 @@ linkedin_username:
 # Sidebar settings
 sidebar: true
 sidebar-about-description: 
-sidebar-avatar: 
+sidebar-avatar: /img/avatar.png
 
 # Set to true to use jQuery based off-line search
 # This function requires hexo-generator-search
@@ -77,7 +77,7 @@ post-default-img:
 word_count: true
 
 # Set the length of preview text
-preview_length: 50
+preview_length: 150
 
 # Featured tag settings
 featured-tags: true
