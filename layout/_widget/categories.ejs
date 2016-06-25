@@ -1,6 +1,6 @@
 <%if(theme['list_categories']) { %>
     <% if (site.categories.length){ %>
-        <h5 class="categories"><i class="fa fa-folder-o"><%= __('categories') %></i></h5>
+        <h5 class="categories"><i class="fa fa-folder-o"></i> <%= __('categories') %></h5>
         <ul>
         <% site.categories.sort('name').each(function(item){ %>
             <li><a href="<%- config.root %><%- item.path %>"><%= item.name %></a></li>

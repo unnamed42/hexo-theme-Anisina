@@ -1,5 +1,5 @@
 <% if(theme.friends) { %>
-<h5 class="links"><i class="fa fa-external-link"><%- __('friends') %></i></h5>
+<h5 class="links"><i class="fa fa-external-link"></i> <%- __('friends') %></h5>
 <ul>
     <% theme.friends.forEach(function(friend){ %>
         <li><a href="<%= friend['url'] %>"><%= friend['title'] %></a></li>

@@ -49,7 +49,7 @@ layout: layout
         <div class="row">
                 <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <% if(page.excerpt) {%>
+                <% if(!theme['show_excerpt'] && page.excerpt) {%>
                     <%- page.more %>
                 <% } else { %>
                     <%- page.content %>

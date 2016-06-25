@@ -1,7 +1,6 @@
 ---
 layout: layout
 ---
-
 <% if(is_home()){%>
 <style>
     <%- include _css/page.css %>
@@ -17,7 +16,7 @@ layout: layout
                         <!--移动端头部显示-->
                         <img src="<%- theme['cdn-url']%><%= theme['sidebar-avatar']%><%- theme['cdn-url']?theme['clip-avatar']:''%>" />
                         <h5><a href="<%= config.root %>about/"><%= config.author %></a></h5>
-                        <p><%= theme['sidebar-about-description'] %></p>
+                        <% if(theme['sidebar-about-description']) {%><p><%= theme['sidebar-about-description'] %></p><% } %>
                     </div>
                 </div>
             </div>
@@ -39,7 +38,6 @@ layout: layout
                 col-xs-12
                 sidebar-container
             ">
-
                 <!-- About Me -->
                 <section class="visible-md visible-lg" style="padding: 0 18px">
                     <%- partial('_widget/site_search') %>
@@ -60,7 +58,6 @@ layout: layout
                         </ul>
                     </div>
                 </section>
-
                 <!-- Featured Tags  标签 -->
                 <% if(theme['featured-tags']) { %>
                 <section>
@@ -74,7 +71,7 @@ layout: layout
                 </section>
                 <% } %>
                 <%- partial('_widget/categories') %>
-                <%- partial('_widget/recent_posts')%>
+                <%- partial('_widget/recent_posts') %>
                 <%- partial('_widget/recent_comments') %>
                 <%- partial('_widget/friends') %>
             </div>
