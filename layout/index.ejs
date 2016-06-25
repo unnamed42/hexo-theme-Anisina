@@ -2,10 +2,7 @@
 layout: page
 ---
 <!-- Main Content -->
-
-
 <% page.posts.each(function(post){ %>
-
 <div class="post-preview <%- post.layout === 'poetry'? 'post-preview-poetry':''%>"
         style="background-image: url('<%- theme["cdn-url"]%><%- post["header-img"] || theme["post-default-img"] %><%- theme["cdn-url"]?theme["clip-home-post-bg"]:"" %>')">
         <a href="<%- config.root %><%- post.path %>">
@@ -26,7 +23,7 @@ layout: page
                     <% if(br < 0 || !is_home()) { %>
                         <%- post.content %>
                     <% } else { %>
-                        <%- post.content.substring(0, br) %>
+                        <%- strip_html(post.content.substring(0, br)) %>
                     <% } %>
                 <% } %>
             </p>
@@ -40,7 +37,6 @@ layout: page
 </div>
 <hr>
 <% }); %>
-
 
 <!-- 翻页 pager -->
 <%- partial('_partial/pagination')%>
