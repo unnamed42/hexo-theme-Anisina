@@ -7,8 +7,8 @@
     <link rel="shortcut icon" href="<%= config.root %>img/coffee.png">
 
     <title>
-        <% if (page.title) { %>
-          <%= page.title + '｜' + config.title %>
+        <% if (page.title || page.category || page.tag || page.archive) { %>
+          <%= page.title || page.category || page.tag || page.year || __('untitled') %> ｜ <%= config.title %>
         <% } else {%>
           <%= config.title %>
         <% } %>

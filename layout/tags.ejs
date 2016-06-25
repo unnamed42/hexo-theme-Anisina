@@ -1,6 +1,10 @@
 ---
 layout: layout
 ---
+<% if(page.tag) { %>
+<%- partial('_partial/archiving',{kind:"tag", comment: false}) %>
+<%- partial('_partial/pagination') %>
+<% } else { %>
 <style>
     <%- include _css/tags.css %>
 </style>
@@ -29,7 +33,6 @@ layout: layout
                     <a href="/<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>"><%= tag.name %></a>
                 <% }) %>
             </div>
-
             <!-- 标签列表 -->
             <% site.tags.map(function(tag){  %>
             <div class="one-tag-list">
@@ -56,3 +59,4 @@ layout: layout
         </div>
     </div>
 </div>
+<% } %>
