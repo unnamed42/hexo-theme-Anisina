@@ -78,3 +78,13 @@
         </a>
     </li>
 <% } %>
+<% if (theme.qq_id) { %>
+    <li>
+        <a target="_blank" href="tencent://message/?uin=<%= theme.qq_id %>&Site=<%= config.url %>&Menu=yes">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+<% } %>
