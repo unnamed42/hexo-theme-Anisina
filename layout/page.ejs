@@ -57,10 +57,6 @@ layout: layout
                             <%- partial('_partial/sns') %>
                         </ul>
                     </div>
-                </section>
-                <!-- Featured Tags  标签 -->
-                <% if(theme['featured-tags']) { %>
-                <section>
                     <div class="tags">
                         <% site.tags.map(function(tag){  %>
                         <% if(tag.length > theme['featured-condition-size']) { %>
@@ -68,12 +64,11 @@ layout: layout
                         <% } %>
                         <% }) %>
                     </div>
+                    <%- partial('_widget/categories') %>
+                    <%- partial('_widget/recent_posts') %>
+                    <%- partial('_widget/recent_comments') %>
+                    <%- partial('_widget/friends') %>
                 </section>
-                <% } %>
-                <%- partial('_widget/categories') %>
-                <%- partial('_widget/recent_posts') %>
-                <%- partial('_widget/recent_comments') %>
-                <%- partial('_widget/friends') %>
             </div>
     </div>
 </div>
