@@ -1,20 +1,10 @@
 # Anisina
 
-A simple responsive , support qiniu image cdn theme for hexo,
-Ported Theme of Hux Blog and Kaijun Blog.
-[![Anisina](http://o7bkkhiex.bkt.clouddn.com/Anisina.png)]
-(http://haojen.github.io/)
-
-## New
-
-### Anisina v1.02 (2016-06-02)
-- bug fix
-- adjust post title text shadow
-- change header img path , now you can use `http://somepath.png`,or use hexo default `img`path: `img/demo.png`
-- adjust post subtitle font size
+A simple responsive theme for hexo, with qiniu image cdn support. Ported from Hux Blog and Kaijun Blog.
+[![Anisina](http://o7bkkhiex.bkt.clouddn.com/Anisina.png)](http://haojen.github.io/)
 
 ## Summary
-	
+    
 - [General](#general)
 - [Features](#features)
 - [install](#install)
@@ -31,155 +21,209 @@ Ported Theme of Hux Blog and Kaijun Blog.
 ## Features
 
 - Fully responsive
-- Support Qiniu images CDN 
-- Custom  wechat title images
-- Support Toc
-- Duoshuo
-- Disqus
-- Googe analytics
-- Baidu analytics
-- SEO
+- Qiniu images CDN support
+- Custom wechat title images
+- Duoshuo/Disqus comment system
+- Google/Baidu analytics
+- Widgets
 
-### Install
+### Usage
 
-1. Init
+1. Install
 
-		git clone https://github.com/Haojen/hexo-theme-Anisina.git
-		
-   then copy this folder into your Hexo  **theme** folder
+```bash
+git clone https://github.com/unnamed42/hexo-theme-Anisina.git [path/to/hexo]/themes/Anisina
+```
 
-2. Modify ```_config.yml```file with your own info. look like this :
+Then copy this folder into your Hexo  **theme** folder.
 
-		themes: Anisina
-	
-3. Or you can copy my theme Anisina `_config.yml` into you hexo blog directory ,  replace default `_config.yml`
+2. Modify `theme` enrty in `_config.yml` to enable this theme:
 
-4. This all , hope you like :)
+```YAML
+theme: Anisina
+```
+3. Regenerate your blog
 
+```bash
+hexo clean && hexo generate && hexo deploy
+```
 
-## Quick Start
+## Settings
 
-### General
+#### Navigator
 
-You can easily get stared by modifying ```config.yml```
-	
-	Site settings
-	title: Anisina Blog             # title of your website
-	SEOTitle: Anisina Blog          # check out docs for more detail
-	description: "Cool Blog"    
-	
-	SNS settings      
-	github_username: haojen     # modify this account to yours
-	weibo_username: haojen      # the footer woule be auto-updated.
-	
-	cdn-url: "http://your-cdn.com/"      # images cdn path
-	
-	# Qiniu imageView2 API
-	clip-content: "?imageView2/1/w/1400/h/400/interlace/1/q/90"
-	clip-avatar: "?imageView2/2/w/300/h/300/interlace/1/q/90"
-	clip-post: "?" # you can custom post width and height
-	clip-home-post-bg: "?imageView2/1/w/800/h/300/interlace/1/q/70"
+```YAML
+nav:
+  - name: archive
+    url: archives/index.html
+    icon: fa-archive
+  - name: tags
+    url: tags/index.html
+    icon: fa-tags
+  - name: guestbook
+    url: guestbook/index.html
+    icon: fa-comment
+  - name: about
+    url: about/index.html
+    icon: fa-user
+```
 
-	#post default images
-	post-default-img: post-default.jpg
+Every entry will become a shortcut on the upper right corner of your blog. The `icon` name must exist in [Font Awesome](http://fontawesome.io/icons/). Don't forget to create the corresponding folder and `index.md` first. You can do it by:
 
-#### 	cdn-url
+```bash
+hexo new page [page-name]
+```
 
-Support qiniu images cdn or you custom others, before use this, you need set you own cdn images root path paste of here. 
+#### cdn-url
 
-1. set your cdn-url,in your own ```_config.yml``` , set ```cdn-url``` your own path
-	
-		cdn-url: http://you-cdn.com/
+qiniu images cdn or others are supported. Before using, you need to set you own cdn images root path. 
+
+1. set your cdn-url,in your own `_config.yml` , set `cdn-url` to your own path
+
+```YAML
+cdn-url: http://you-cdn.com/
+```
 
 2. update your images to cdn library
 
-3. in post **front-matter** set your images name
+3. in post **front-matter** section, set your images name
 
-		 wechat-share: icon-wechat.png
-		 #or
-		 header-img: some-images.png
-	
-in browser,  img src or background-url  will be look like ```http://you-cdn.com/icon-wechat.png``` or ```http://you-cdn.com/header-img```, etc.
-	
-if you don't need cdn , the default path is hexo ```source/img```folder.
+```YAML
+wechat-share: icon-wechat.png
+#or
+header-img: some-images.png
+```
+
+In the generated HTML code, `img src` or `background-url` will be set to `http://you-cdn.com/icon-wechat.png` or `http://you-cdn.com/header-img`, etc.
+
+If you don't need cdn, just leave it empty. The default path is hexo's `source/img` folder.
 
 #### clip-*
+
 qiniu imageView2 API
 
-if you wannat to use , you must be configuration cdn-url of qiniu.
-about qiniu imageView2 API more info please [click here](http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html)
+`cdn-url` must be set before using. More information about qiniu imageView2 API, please [click here](http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html)
 
 #### Analytics
 
 Google Analytics and Baidu Tongji simple config:
 
-	#Baidu Analytics**
-	ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+```YAML
+#Baidu Analytics**
+ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
-	#Google Analytics
-	ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-	ga_domain: huangxuan.me
-
-Just checkout the code offered by Google/Baidu, and copy paste here, all the rest is already done for you.
+#Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: huangxuan.me
+```
+Just checkout the code offered by Google/Baidu, and paste it here, all the rest is already done for you.
 
 #### Comment
 
 This theme support both Disqus and Duoshuo as the third party discussion system.
 
-First, you need to sign up and get your own account. Repeat, DO NOT use mine! (I have set Trusted Domains) It is deathly simple to sign up and you will get the full power of management system. Please give it a try!
+```YAML
+duoshuo_username: _short_name_
+duoshuo_share: # true or false
+# or
+disqus_username: _short_name_
+```
 
-Second,  you can easily complete your comment configuration by just adding your short name into _config.yml:
+Just replace `_short_name_` with your Disqus or Duoshuo short name. You can use both at the same time.
 
-	duoshuo_username: _your_duoshuo_short_name_
-	# OR
-	disqus_username: _your_disqus_short_name_
-	
-Furthermore, Duoshuo support Sharing. if you only wanna use Duoshuo comment without sharing, you can set duoshuo_share: false. You can use Duoshuo Sharing and Disqus Comments together also.
+You can turn off Duoshuo Share by setting `duoshuo_share` to `false`, but Share cannot be used with duoshuo system off.
+
+#### Widgets
+
+```YAML
+# Set to true to use jQuery based off-line search
+# This function requires hexo-generator-search
+site_search: true
+
+# Recent contents
+list_categories: true
+recent_posts: true
+recent_comments: true
+
+# If you want to show word count, set to true
+# This function requires hexo-wordcount
+word_count: true
+
+# Links
+friends:
+  - title: friend1
+    url: http://www.friend1.com
+```
+
+The settings are self-explaining enough.
 
 #### Featured Tags
 
-	featured-tags: true  
-	featured-condition-size: 1     # A tag will be featured if the size of 	it is more than this condition value
+```YAML
+featured-tags: true
+featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
+```
 
-#### Mini About Me
+#### Sidebar settings
 
-	# Sidebar settings
-	sidebar: true
-	sidebar-about-description: "your description here"
-	sidebar-avatar: avatar-hux.jpg     
+```YAML
+# Sidebar settings
+sidebar: true
+sidebar-about-description: "your description here"
+sidebar-avatar: avatar-hux.jpg
+```
 
-Mini-About-Me module display all your SNS buttons also your avatar and the description if you set sidebar-avatar and sidebar-about-description which is very useful and common for a sidebar so it is default with your sidebar.
+This will be shown as a sidebar on wide-screen devices on the right side of your blog. Everything will disappear automatically when displayed on a mobile device, this is the so-called responsive design.
 
-It is really nice-looking and well-designed. It would be hidden in a small screen seeing the sidebar would be push to bottom and there is already a footer including SNS feature which is similar.
+##### SNS Accounts
+
+```YAML
+weibo_username: 
+zhihu_username: 
+github_username: 
+twitter_username: 
+facebook_username: 
+linkedin_username: 
+googleplus_id: # something after your https://plus.google.com/u/0/
+steam_id: # something after your https://steamcommunity.com/id/
+qq_id: # You need to enable qq online state at http://shang.qq.com/v3/widget.html
+tieba_id: 
+```
+
+We've provided many SNS settings as above. All of them will be shown as circle button inside your sidebar.
+
+### Excerpt
+
+Usually the first line of your main text will be cut as excerpt without written explicitly. Everything after `front-matter` and before `<!-- more -->` is excerpt of your post. You can choose whether to show it in your main text or not by setting `show_excerpt`:
+
+```YAML
+show_excerpt: false
+```
 
 ### Post
 
-The **front-matter** of a post looks like that:
+A **front-matter** example of a post is shown below:
+```YAML
+---
+layout: post
+title: "Hola 2016"
+subtitle: "hi, I'm haojen ma"
+date: 2016-05-26 06:00
+author: "Haojen Ma"
+header-img: "img/post-default.jpg"
+wechat-share: "icon_wechat.jpg"
+tags: [Movies,Life]
+---
+```
+#### Poetry
 
-	---
-	layout: post
-	title: "Hola 2016"
-	subtitle: "hi, I'm haojen ma"
-	date: 2016-05-26 06:00
-	author: "Haojen Ma"
-	header-img: "img/post-default.jpg"
-	wechat-share: "icon_wechat.jpg"
-	tags:
-		- Movies
-		- Life
-	---
-	
-#### Create a post
-	
-	hexo new "your-post-name"
-	
-they will be create a new post in Hexo ```source/_posts``` folder
+If your like poetry, you can try `poetry` layout, that will be cool!
 
-if your like chinese poetry , you can try  ```poetry``` layout ,they will be cool
+```bash
+hexo new poetry 'your-poetry-name'
+```
 
-	hexo new poetry 'your-poetry-name'
-	
- A poetry demo
+A poetry demo
  
 ![poetry-demo](http://o7bkkhiex.bkt.clouddn.com/poetry-show.png)
 
@@ -188,11 +232,12 @@ if your like chinese poetry , you can try  ```poetry``` layout ,they will be coo
 post header images.
 if you don't have set ,this will use post default header images.
 
-
 #### Custom wechat title images
 
-	wechat-share: "icon_wechat.jpg"
-	
+```YAML
+wechat-share: "icon_wechat.jpg"
+```
+
 when your share post to wechat moments , this post images will show here,
 if you don't have set ,this will use post header images.
 
@@ -204,13 +249,5 @@ and also you can help me fix bugs and add new feature :)
 - thanks kaijun and hux.
 
 ## License
-Apache License Version 2.0
-	
 
-
-
-
-
-
-
-	
+MIT
