@@ -1,6 +1,6 @@
-<% if (config.RSS) { %>
+<% if (config.feed) { %>
     <li>
-        <a href="<%= config.root + 'feed.xml' %>">
+        <a href="<%= config.root + config.feed.path %>">
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -68,6 +68,16 @@
         </a>
     </li>
 <% } %>
+<% if (theme.googleplus_id) { %>
+    <li>
+        <a target="_blank" href="https://plus.google.com/u/0/<%= theme.googleplus_id %>">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+<% } %>
 <% if (theme.steam_id) { %>
     <li>
         <a target="_blank" href="https://steamcommunity.com/id/<%= theme.steam_id %>">
@@ -84,6 +94,16 @@
             <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+    </li>
+<% } %>
+<% if (theme.tieba_id) { %>
+    <li>
+        <a target="_blank" href="http://tieba.baidu.com/home/main/?un=<%= theme.tieba_id %>">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-stack-1x fa-inverse">贴</i>
             </span>
         </a>
     </li>
