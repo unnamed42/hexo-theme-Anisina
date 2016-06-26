@@ -19,20 +19,19 @@ nav:
   - name: 关于
     url: about/index.html
     icon: fa-user
-  - name: RSS
-    url: atom.xml
-    icon: fa-rss-square
 
-# SNS settings
-# replace usernames with yours
+# SNS settings, replace usernames with yours
+# If the id or username is a big number, add a single quote to not get parsed as number.
 weibo_username: 
 zhihu_username: huang-wen-rui-74
 github_username: unnamed42
 twitter_username: 
 facebook_username: 
 linkedin_username: 
-steam_id: # something after your steamcommunity.com/id/
-qq_id: 390517426
+googleplus_id: '101538012089625781458' # something after your https://plus.google.com/u/0/
+steam_id: # something after your https://steamcommunity.com/id/
+qq_id: # 390517426 # You need to enable qq online state at http://shang.qq.com/v3/widget.html
+tieba_id: Xelnagaman
 
 # Sidebar settings
 sidebar: true
@@ -61,7 +60,7 @@ duoshuo_share: false
 ba_track_id:
 # Google Analytics
 # Format: UA-xxxxxx-xx
-ga_track_id:            
+ga_track_id: 
 ga_domain:
 
 # img CDN path
@@ -81,7 +80,7 @@ post-default-img: https://www.nasa.gov/sites/default/files/images/582752main_sun
 # This function requires hexo-wordcount
 word_count: true
 
-# Set the length of preview text
+# Set the length of preview text. Do not affect length of excerpt.
 preview_length: 150
 
 # Set to false if you don't want excerpt in your articles
