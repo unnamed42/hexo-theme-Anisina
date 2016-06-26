@@ -7,8 +7,10 @@
     <link rel="shortcut icon" href="<%= config.root %>img/coffee.png">
 
     <title>
-        <% if (page.title || page.category || page.tag || page.archive) { %>
-          <%= page.title || page.category || page.tag || page.year || __('untitled') %> ｜ <%= config.title %>
+        <% if(page.archive) { %>
+          <%= page.year || page.month || __('archive') %> ｜ <%= config.title %>
+        <% } else if (page.title || page.category || page.tag) { %>
+          <%= page.title || page.category || page.tag %> ｜ <%= config.title %>
         <% } else {%>
           <%= config.title %>
         <% } %>
@@ -27,7 +29,6 @@
     
     <!-- Custom Fonts -->
     <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
