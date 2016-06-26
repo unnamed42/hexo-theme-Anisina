@@ -1,10 +1,12 @@
 <%if(theme['list_categories']) { %>
+    <div class="widget categories">
     <% if (site.categories.length){ %>
-        <h5 class="categories"><i class="fa fa-folder-o"></i> <%= __('categories') %></h5>
-        <ul>
+        <h5 ><i class="fa fa-folder-o"></i> <%= __('categories') %></h5>
+        <ul class="list-inline">
         <% site.categories.sort('name').each(function(item){ %>
             <li><a href="<%- config.root %><%- item.path %>"><%= item.name %></a></li>
         <% }); %>
         </ul>
     <% } %>
+    </div>
 <% } %>

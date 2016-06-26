@@ -56,6 +56,16 @@
     padding-left: 0;
 }
 
+.sidebar-container .widget ul{
+    list-style-type: none;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.sidebar-container .widget li{
+    margin-top: 2px;
+}
+
 #local-search-result {
   overflow:auto;
   max-height:3in;

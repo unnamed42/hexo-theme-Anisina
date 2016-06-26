@@ -1,7 +1,7 @@
 <% if(theme['recent_posts']) { %>
     <% if (site.posts.length){ %>
-    <div class="categorieslist">
-        <h5 class="recent_posts"><i class="fa fa-file-o"></i> <%- __('recent_posts') %></h5>
+    <div class="widget recent-posts">
+        <h5 class="recent-posts"><i class="fa fa-file-o"></i> <%- __('recent_posts') %></h5>
         <ul>
             <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
             <li>

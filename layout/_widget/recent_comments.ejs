@@ -1,4 +1,5 @@
 <% if(theme.recent_comments) { %>
+    <div class="widget recent-comments">
     <% if(theme['duoshuo_username']) { %>
     <h5 class="duoshuo-widget-title"><i class="fa fa-comment-o"></i> <%- __('recent_comments') %></h5>
     <ul class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-admin="0" data-excerpt-length="32" data-show-title="1">
@@ -10,4 +11,5 @@
             <script type="text/javascript" src="http://<%= theme['disqus_username'] %>.disqus.com/recent_comments_widget.js?num_items=5&hide_avatars=0&avatar_size=32&excerpt_length=200&hide_mods=0"></script>
         </div>
     <% } %>
+    </div>
 <% } %>
