@@ -1,7 +1,7 @@
 (function($) { 
 // When to show the scroll link
 // higher number = scroll link appears further down the page   
-var upperLimit = 1000;
+var upperLimit = 500;
 
 // Our scroll link element
 var scrollElem = $('#totop');
@@ -10,13 +10,11 @@ var scrollElem = $('#totop');
 var scrollSpeed = 500;
 
 // Show and hide the scroll to top link based on scroll position   
-scrollElem.hide();
-$(window).scroll(function () {            
-    var scrollTop = $(document).scrollTop();       
-    if ( scrollTop > upperLimit ) {
-        $(scrollElem).stop().fadeTo(300, 1); // fade back in           
-    }else{       
-        $(scrollElem).stop().fadeTo(300, 0); // fade out
+$(window).scroll(function () {
+    if ( $(document).scrollTop() > upperLimit ) {
+        $(scrollElem).addClass("display"); // fade back in           
+    }else{
+        $(scrollElem).removeClass("display"); // fade out
     }
 });
 
