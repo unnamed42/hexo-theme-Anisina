@@ -83,6 +83,8 @@ Every entry will become a shortcut on the upper right corner of your blog. The `
 hexo new page [page-name]
 ```
 
+**PS**: We have a special stylesheet for tags page. So the front-matter of `tags/index.md` must contain `layout: tags`.
+
 #### cdn-url
 
 qiniu images cdn or others are supported. Before using, you need to set you own cdn images root path. 
