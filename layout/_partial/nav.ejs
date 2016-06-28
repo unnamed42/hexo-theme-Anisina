@@ -12,8 +12,13 @@
             </button>
             <a class="navbar-brand" href="<%= config.root %>">
                 <span class="brand-logo">
+                <% if(config.title) { %>
                     <%= config.title %>
                 </span>
+                <% } else { %>
+                    <%= config.author %>
+                </span>'s Blog
+                <% } %>
             </a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
