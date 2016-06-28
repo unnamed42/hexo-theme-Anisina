@@ -10,7 +10,7 @@
 <%- js('js/totop') %>
 
 <!-- Site search JS -->
-<% if(is_page() && theme['site_search']) { %>
+<% if(is_home() && theme['site_search']) { %>
 <%- js('js/search.js') %>
 <script type="text/javascript">
     var search_path = "<%= config.search.path %>";
