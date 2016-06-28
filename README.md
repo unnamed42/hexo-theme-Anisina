@@ -27,22 +27,31 @@ A simple responsive theme for hexo, with qiniu image cdn support. Ported from Hu
 - Google/Baidu analytics
 - Widgets
 
-### Usage
+### Install
 
-1. Install
+1. Download
 
 ```bash
 git clone https://github.com/unnamed42/hexo-theme-Anisina.git [path/to/hexo]/themes/Anisina
 ```
 
-Then copy this folder into your Hexo  **theme** folder.
+2. Install dependencies
 
-2. Modify `theme` enrty in `_config.yml` to enable this theme:
+```bash
+npm install hexo-renderer-ejs hexo-renderer-stylus --save
+```
+
+I assume you have already installed `hexo-generator-category`, `hexo-generator-pagination`, `hexo-generator-feed`, `hexo-generator-tag`, `hexo-generator-archive`.
+
+If you want to use word count, install `hexo-wordcount`; to use site search, install `hexo-generator-search`.
+
+3. Modify `theme` enrty in `_config.yml` to enable this theme:
 
 ```YAML
 theme: Anisina
 ```
-3. Regenerate your blog
+
+4. Regenerate your blog
 
 ```bash
 hexo clean && hexo generate && hexo deploy
