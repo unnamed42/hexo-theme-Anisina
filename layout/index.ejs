@@ -3,37 +3,33 @@ layout: page
 ---
 <!-- Main Content -->
 <% page.posts.each(function(post){ %>
-<div class="post-preview <%- post.layout === 'poetry'? 'post-preview-poetry':''%>"
-        style="background-image: url('<%- theme["cdn-url"]%><%- post["header-img"] || theme["post-default-img"] %><%- theme["cdn-url"]?theme["clip-home-post-bg"]:"" %>')">
-        <a href="<%- config.root %><%- post.path %>">
-        <h2 class="post-title">
-            <%- post.title || __('untitiled') %>
-        </h2>
-        <% if (post.subtitle && post.subtitle.length) { %>
-            <h3 class="post-subtitle">
-                <%- post.subtitle %>
-            </h3>
-        <% } %>
-        <div class="post-content-preview">
-            <p>
-                <% if(post.excerpt) { %>
-                    <%- post.excerpt %>
-                <% } else { %>
-                    <% var br = post.content.indexOf('\n') %>
-                    <% if(br < 0 || !is_home()) { %>
-                        <%- post.content %>
-                    <% } else { %>
-                        <%- strip_html(post.content.substring(0, br)) %>
-                    <% } %>
-                <% } %>
-            </p>
-        </div>
-        <p class="post-meta">
-            Posted by <%- post.author || config.author %> on
-            <%= post.date.format(config.date_format) %>
-        </p>
+<div class="post-preview <%- post.layout === 'poetry'? 'post-preview-poetry':''%>">
+    <a href="<%- config.root %><%- post.path %>">
+    <h2 class="post-title">
+        <%- post.title || __('untitiled') %>
+    </h2>
     </a>
-
+    <% if (post.subtitle && post.subtitle.length) { %>
+        <h3 class="post-subtitle">
+            <%- post.subtitle %>
+        </h3>
+    <% } %>
+    <div class="post-content-preview">
+        <% if(post.excerpt) { %>
+            <%- post.excerpt %>
+        <% } else { %>
+            <% var br = post.content.indexOf('\n') %>
+            <% if(br < 0 || !is_home()) { %>
+                <%- post.content %>
+            <% } else { %>
+                <p><%- strip_html(post.content.substring(0, br)) %></p>
+            <% } %>
+        <% } %>
+    </div>
+    <p class="post-meta">
+        Posted by <%- post.author || config.author %> on
+        <%= post.date.format(config.date_format) %>
+    </p>
 </div>
 <hr>
 <% }); %>
