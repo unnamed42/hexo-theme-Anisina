@@ -137,7 +137,7 @@ blockquote {
     color: #808080;
     font-style: normal;
     font-size: 1.1em;
-    font-family: "Lora","Garamond","Freight Text","Times New Roman";
+    font-family: "Lora","FF Tisa","Freight Text","Times New Roman";
     margin: 20px 0 20px;
 }
 
@@ -527,6 +527,7 @@ a:focus {
 }
 .post-preview .post-meta {
     color: #808080;
+    font-family: "Lora","FF Tisa","Freight Text","Times New Roman";
     font-size: 12px;
     margin:0;
     padding-left: 2px;
