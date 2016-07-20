@@ -1,0 +1,117 @@
+::selection, ::-moz-selection {
+    color: white;
+    text-shadow: none;
+    background: #0085a1;
+}
+
+body {
+    line-height: 1.7;
+    font-size: 16px;
+    color: #404040;
+    overflow-x: hidden;
+    font-family: $MainFontFamily;
+}
+
+p {margin:0 0 20px;}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+h2{font-size: 22px;}
+h3{font-size: 20px;}
+h4{font-size: 18px;}
+h5{font-size: 16px;}
+h6{font-size: 15px;}
+
+a {
+    color: #404040;
+    &:hover, &:focus {color: #0085a1;}
+    &:focus {outline: none;}
+    img {
+        &:hover, &:focus {cursor: zoom-in;}
+    }
+}
+
+blockquote {
+    color: #808080;
+    font-style: normal;
+    font-size: 1.1em;
+    font-family: $SerifFontFamily;
+    margin: 20px 0 20px;
+    p {margin: 0;}
+}
+
+small.img-hint {
+    display: block;
+    margin-top: -20px;
+    text-align: center;
+}
+
+br + small.img-hint {
+    margin-top: -40px;
+}
+
+img.shadow {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 2px 5px 0;
+    &::selection, &::-moz-selection {
+        color: white;
+        background: transparent;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    select {
+        -webkit-appearance: none;
+        margin-top: 15px;
+        color: #337ab7;
+        border-color: #337ab7;
+        padding: 0 0.4em;
+        background: white;
+    }
+}
+
+.table {
+    th, td {border: 1px solid #eee !important;}
+}
+
+hr.small {
+    max-width: 100px;
+    margin: 15px auto;
+    border:4px white;
+}
+
+pre,
+.table-responsive {
+    -webkit-overflow-scrolling: touch;
+}
+
+pre code {
+    display: block;
+    width: auto;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+form .row:first-child .floating-label-form-group {
+    border-top: 1px solid #eeeeee;
+}
+
+footer {
+    font-size: 20px;
+    padding: 50px 0 65px;
+    .list-inline {
+        margin: 0;
+        padding: 0;
+    }
+    .copyright {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 12px;
+        a {
+            color: #337ab7;
+            &:hover, &:focus {color: #0085a1;}
+        }
+    }
+}

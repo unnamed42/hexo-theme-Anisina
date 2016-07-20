@@ -1,0 +1,41 @@
+.container {
+    .toc-col {padding: 0;}
+    .toc-wrap {
+        margin-top: 30px;
+        list-style: none;
+        color: darkgrey;
+        border-left: #eee 4px solid;
+        padding-left: 12px;
+        text-transform: capitalize;
+        > ol {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            > ol {
+                padding-left: 15px;
+                list-style: none;
+            }
+            ol a {
+                color: darkgrey;
+                font-size: .85em;
+            }
+        }
+        .toc-level-2 > a {
+            color: #0085a1;
+            font-size: .9em;
+        }
+        &.toc-fixed {
+            position: fixed;
+            top: 85px;
+            margin-top: 0;
+            overflow: auto;
+            max-height: 81%;
+        }
+    }
+}
+
+.custom-haojen-container{
+    padding-top: 0;
+    @media (min-width: 992px) {padding-top: 90px;}
+}

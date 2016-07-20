@@ -1,0 +1,156 @@
+@media only screen and (max-width: 767px) {
+    .navbar-default .navbar-collapse {
+        border: none;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 1px 4px;
+        border-radius: 2px;
+        width: 170px;
+        float: right;
+        margin: 0;
+    }
+    
+    #huxblog_navbar {
+        a {
+            font-size: 13px;
+            line-height: 28px;
+        }
+        .navbar-collapse {
+            height: 0;
+            transform: scaleY(0);
+            transform-origin: top right;
+            transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        li {
+            opacity: 0;
+            transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
+        }
+        &.in {
+            transform: scaleX(1);
+            opacity: 1;
+            .navbar-collapse {
+                transform: scaleY(1);
+                -webkit-transform: scaleY(1);
+            }
+            li {opacity: 1;}
+        }
+    }
+}
+
+.navbar-custom {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 6;
+    transition: background .5s;
+    line-height: 1.7;
+    .navbar-brand {
+        font-weight: 800;
+        color: white;
+        height: 56px;
+        line-height: 25px;
+        &:hover {color: rgba(255, 255, 255, 0.8);}
+    }
+    .nav li a {
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-shadow: 0 0 1px rgba(0,0,0,.1);
+        &:active {background: rgba(0, 0, 0, 0.12);}
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-custom {
+        background: transparent;
+        border-bottom: 1px solid transparent;
+        body {font-size: 20px;}
+        .navbar-brand {
+            color: white;
+            padding: 20px;
+            line-height: 17px;
+            &:hover, &:focus {color: rgba(255, 255, 255, 0.8);}
+        }
+        .nav li a {
+            color: white;
+            padding: 20px;
+            &:hover, &:focus {color: #FC7097;}
+            &:active {background: none;}
+        }
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .navbar-custom {
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        &.is-fixed {
+            .nav li a, .navbar-brand {
+                color: #404040;
+                &:hover, &:focus {color: #0085a1;}
+            }
+        }
+    }
+}
+
+
+/* Hux Optimize UserExperience */
+.navbar-default {
+    /* Hux customize Style for navBar button */
+    .navbar-toggle {
+        border-color: transparent;
+        padding: 19px 16px;
+        margin-top: 2px;
+        margin-right: 2px;
+        margin-bottom: 2px;
+        border-radius: 50%;
+        &:focus, &:hover {background-color: inherit;}
+        &:active {background-color: rgba(255, 255, 255, 0.25);}
+    }
+    .icon-bar {
+        width: 18px;
+        background-color: white;
+        + .icon-bar {margin-top: 3px;}
+    }
+}
+
+.navbar-custom {
+    &.is-fixed {
+        /* when the user scrolls down, we hide the header right above the viewport */
+        position: fixed;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 0 10px rgba(14, 14, 14, .26);
+        height: 55px;
+        &::before {
+            content: ' ';
+            display: block;
+            height: 2px;
+            position: absolute;
+            width: 100%;
+            background: red;
+        }
+        .brand-logo {
+            border-radius: 3px;
+            background: black;
+            color: white;
+            padding-bottom: 3px;
+            padding-left: 5px;
+            margin-right: 5px;
+            padding-top: 1px;
+        }
+        .navbar-brand, .navbar-right a {color: black;}
+        .navbar-toggle span {background: black;}
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .navbar .container-fluid {
+        padding: 0 5%;
+    }
+}
