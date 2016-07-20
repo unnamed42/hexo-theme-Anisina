@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <% if(config.description) { %><meta name="description" content="<%= config.description %>"><% } %>
     <% if(theme.keyword){ %><meta name="keyword" content="<%= theme.keyword %>"><% } %>
-
+    
     <title>
         <% if(page.archive) { %>
           <%= page.year || page.month || __('archive') %> ｜ <%= config.title || (config.author + "\'s Blog") %>
@@ -14,17 +14,13 @@
           <%= config.title || (config.author + "\'s Blog") %>
         <% } %>
     </title>
-
+    
     <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
-
+    
     <!-- Bootstrap Core CSS -->
     <%- css('css/bootstrap.min.css') %>
     <!-- Custom CSS -->
-    <%- css('css/blog-style.css') %>
-    <!-- Pygments Github CSS -->
-    <%- css('css/syntax') %>
-    <!-- The totop button -->
-    <%- css('css/totop') %>
+    <%- css('css/main.css') %>
     
     <!-- jQuery -->
     <%- js('js/jquery.min.js') %>
