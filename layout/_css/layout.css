@@ -1,6 +1,0 @@
-.intro-header{
-    background-image:url(
-    '<%- theme["cdn-url"]%><%= page["header-img"] ||theme["header-img"] %><%-
-    theme['cdn-url']? theme['clip-content']:""%>'
-    )
-}

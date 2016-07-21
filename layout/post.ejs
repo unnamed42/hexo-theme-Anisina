@@ -9,7 +9,9 @@ layout: layout
 <!-- Post Header -->
 <!-- only post bg-->
 <style type="text/css">
-    <%- include _css/post.css %>
+header.intro-header{
+    background-image: url('<%- theme["cdn-url"]%><%= page["header-img"]|| theme["post-default-img"] %><%- theme["cdn-url"]?theme["clip-content"]: ""%>')
+}
 </style>
 
 <header class="intro-header" >

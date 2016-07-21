@@ -57,13 +57,12 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 }
 
 //主页
-(function(){
+jQuery(function(){
     if(!isPages('data-ispost')){
         var navbar = document.querySelector('.navbar.navbar-custom')
         navbar.classList.add('is-fixed');
     }
-
-})();
+});
 
 /*
 * 先获取H1标签
@@ -74,7 +73,7 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
 /*
     博文页面
 */
-(function(){
+jQuery(function(){
     var navbar = document.querySelector('.navbar-custom');
     var introHeader = document.querySelector('.intro-header').offsetHeight;
     if (isPages('data-ispost')){
@@ -84,8 +83,5 @@ function scrollCheck(scrollTarget, toggleClass, scrollHeight){
         scrollCheck(toc,'toc-fixed',introHeader-60);
         scrollCheck(navbar,'is-fixed');
         scrollCheck(postTitle,'post-title-fixed',introHeader-60);
-    }else {
     }
-})();
-
-
+});

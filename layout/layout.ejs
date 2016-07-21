@@ -4,7 +4,12 @@
 <!-- Head tag -->
 <%- partial('_partial/head') %>
 <style>
-    <%- include _css/layout.css %>
+.intro-header{
+    background-image:url(
+    '<%- theme["cdn-url"]%><%= page["header-img"] ||theme["header-img"] %><%-
+    theme['cdn-url']? theme['clip-content']:""%>'
+    )
+}
 </style>
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="">
@@ -14,8 +19,6 @@
     <!-- Footer -->
     <%- partial('_partial/footer') %>
     <%- partial('_partial/after_footer') %>
-    <!--wechat title img-->
-    <img class="title-img" src="<%- theme['cdn-url']%><%= theme['sidebar-avatar']%><%- theme['cdn-url']?theme['clip-avatar']:''%>">
 </body>
 
 </html>
