@@ -120,33 +120,31 @@
     }
 }
 
-.navbar-custom {
-    &.is-fixed {
-        /* when the user scrolls down, we hide the header right above the viewport */
-        position: fixed;
-        background-color: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 0 10px rgba(14, 14, 14, .26);
-        height: 55px;
-        &::before {
-            content: ' ';
-            display: block;
-            height: 2px;
-            position: absolute;
-            width: 100%;
-            background: red;
-        }
-        .brand-logo {
-            border-radius: 3px;
-            background: black;
-            color: white;
-            padding-bottom: 3px;
-            padding-left: 5px;
-            margin-right: 5px;
-            padding-top: 1px;
-        }
-        .navbar-brand, .navbar-right a {color: black;}
-        .navbar-toggle span {background: black;}
+.navbar-custom.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 0 10px rgba(14, 14, 14, .26);
+    height: 55px;
+    &::before {
+        content: ' ';
+        display: block;
+        height: 2px;
+        position: absolute;
+        width: 100%;
+        background: red;
     }
+    .brand-logo {
+        border-radius: 3px;
+        background: black;
+        color: white;
+        padding-bottom: 3px;
+        padding-left: 5px;
+        margin-right: 5px;
+        padding-top: 1px;
+    }
+    .navbar-brand, .navbar-right a {color: black;}
+    .navbar-toggle span {background: black;}
 }
 
 @media screen and (min-width: 768px) {

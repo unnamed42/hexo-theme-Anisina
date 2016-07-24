@@ -29,19 +29,14 @@ a {
     color: #404040;
     &:hover, &:focus {color: #0085a1;}
     &:focus {outline: none;}
-    img {
-        &:hover, &:focus {cursor: zoom-in;}
-    }
+    img:hover, img:focus {cursor: zoom-in;}
 }
 
 small.img-hint {
     display: block;
     margin-top: -20px;
     text-align: center;
-}
-
-br + small.img-hint {
-    margin-top: -40px;
+    br + & {margin-top: -40px;}
 }
 
 img.shadow {
