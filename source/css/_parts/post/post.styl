@@ -44,81 +44,19 @@ article blockquote footer {padding: 5px 20px 0;}
     }
 }
 
-.post-preview {
-    > a > .post-title {
-        margin-bottom: 0;
-        font-family: STSong;
-        text-shadow: 0 0 1px rgba(0,0,0,.15);
-    }
-    > .align-center {
-        display: block;
-        height: 100%;
-        > a {
-            color: #404040;
-            &:hover, &:focus {
-                text-decoration: none;
-                outline: none;
-            }
-            > h2 {transition: color .3s;}
-            &:hover > h2 {color: #FC7097;}
-        }
-        > .post-meta {
-            a {
-                text-decoration: none;
-                color: #404040;
-                &:hover, &:focus {
-                    color: #0085a1;
-                    text-decoration: underline;
-                }
-            }
-        }
-        > .post-title {
-            @media only screen and (min-width: 768px) {
-                font-size: 26px;
-                line-height: 1.3;
-            }
-        }
-    }
-    > .post-title {
-        font-size: 21px;
-        line-height: 1.3;
-        margin-top: 30px;
-        margin-bottom:0;
-    }
-    > .post-subtitle{
-        font-size: 18px;
-        line-height: 1.3;
-        margin: 0;
-        margin-bottom: 10px;
-        color: rgba(0, 0, 0, .6);
-        font-weight: 400;
-    }
-    .post-meta {
-        color: #808080;
-        font-family: $SerifFontFamily;
-        font-size: 12px;
-        margin:0;
-        padding-left: 2px;
-        margin-bottom: 15px;
-        @media only screen and (min-width: 768px) {font-size: 16px;}
-    }
-}
-
-.post-content-preview p {color: #757575;}
-
-.post-title-haojen{
+.post-title-haojen {
     display: none;
 }
 
-.post-title-fixed{
+.post-title-fixed {
     display: block;
     position: fixed;
-    top:-40px;
+    top: -40px;
     width: 100%;
     z-index: 6;
     text-align: center;
     white-space: nowrap;
-    left:0;
+    left: 0;
     span {
         display: inline-block;
         max-width: 250px;
@@ -141,8 +79,8 @@ article blockquote footer {padding: 5px 20px 0;}
             display: inline-block;
         }
         @media screen and (max-width: 500px) {
-        display: none;
-        top:57px;
+            display: none;
+            top:57px;
         }
     }
 }

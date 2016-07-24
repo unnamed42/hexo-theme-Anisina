@@ -1,12 +1,13 @@
 ---
 layout: page
 ---
+<% var post_count = 0; %>
 <!-- Main Content -->
 <% page.posts.each(function(post){ %>
 <div class="post-preview <%- post.layout === 'poetry'? 'post-preview-poetry':''%>"
-     style="background-image: url('<%- theme["cdn-url"]%><%- post["header-img"] || theme["post-default-img"] %><%- theme["cdn-url"]?theme["clip-home-post-bg"]:"" %>')">
-    <div class="align-center">
-        <a href="<%- config.root %><%- post.path %>">
+    <% if(post_count == 0) { %> style="background-image: url('<%- theme["cdn-url"]%><%- post["header-img"] || theme["post-default-img"] %><%- theme["cdn-url"]?theme["clip-home-post-bg"]:"" %>')"<% } %>>
+    <% if(post_count == 0) { %><div id="first-post"><% } %>
+        <a class="post-link" href="<%- config.root %><%- post.path %>">
         <h2 class="post-title">
             <%- post.title || __('untitiled') %>
         </h2>
@@ -32,9 +33,10 @@ layout: page
             <p>Posted by <%- post.author || config.author %> on
             <%= post.date.format(config.date_format) %></p>
         </div>
-    </div>
+    <% if(post_count == 0) { %></div><% } %>
 </div>
-<hr>
+<% if(post_count != 0) { %><hr><% } %>
+<% ++post_count; %>
 <% }); %>
 
 <!-- 翻页 pager -->

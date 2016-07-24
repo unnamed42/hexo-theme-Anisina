@@ -1,86 +1,84 @@
 /* Specialized style of preview of the first post/poetry */
 
 .custom-haojen-container {
-    /*第一个分界线去掉*/
-    hr:nth-of-type(1) {display: none;}
-    .post-preview:nth-of-type(1), .post-preview-poetry:nth-of-type(1){
-        text-align: center;
-        background-repeat: no-repeat;
-        border-radius: 3px;
-        background-size: cover;
-        padding:0;
-        height: 300px;
-        display: table;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.16);
+    .post-preview, .post-preview-poetry {
+        &:first-of-type {
+            text-align: center;
+            background-repeat: no-repeat;
+            border-radius: 3px;
+            background-size: cover;
+            padding:0;
+            height: 300px;
+            display: table;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.16);
+        }
     }
     /*去掉诗歌的背景图片*/
-    .post-preview-poetry:nth-of-type(1){
+    .post-preview-poetry #first-post {
         background-image: none!important;
         background-color: rgba(255, 248, 220, 0.5);
     }
-    .post-preview {
-        &:nth-child(1) {
-            h2, .post-meta, .post-subtitle {
-                text-shadow: 0 0 40px rgba(0, 0, 0, 1);
-                letter-spacing: 1px;
-                color: #fff;
-                font-family: unset;
-                font-weight: 500;
-                margin-top: 0;
-                padding-left: 60px;
-                padding-right: 60px;
-            }
-            .post-meta{
-                font-size: .9em;
-                font-weight: 300;
-                margin-top: 0;
-            }
-            /*不显示摘要*/
-            .post-content-preview {display: none}
-        }
-        /*只第一个显示背景图片*/
-        &:not(:nth-child(1)) {background-image: none!important;}
+    .post-preview #first-post {
         /*主题*/
-        &:nth-of-type(1) > .align-center {
-            display: table-cell;
-            vertical-align: middle;
+        display: table-cell;
+        vertical-align: middle;
+        height: 100%;
+        .post-title, .post-meta, .post-subtitle {
+            text-shadow: 0 0 40px rgba(0, 0, 0, 1);
+            letter-spacing: 1px;
+            color: #fff;
+            font-family: unset;
+            font-weight: 500;
+            margin-top: 0;
+            padding-left: 60px;
+            padding-right: 60px;
         }
+        .post-meta {
+            font-size: .9em;
+            font-weight: 300;
+            margin-top: 0;
+        }
+        .post-title {
+            @media only screen and (min-width: 768px) {
+                font-size: 26px;
+                line-height: 1.3;
+            }
+        }
+        /*不显示摘要*/
+        .post-content-preview {display: none;}
     }
-    .post-preview-poetry {
-        &:nth-child(1) {
-            .post-subtitle {
-                letter-spacing: 6px;
-                font-size: 18px;
-                font-family: unset;
-                font-weight: 400;
-                color: rgba(0,0,0,.75)
-            }
-            > .align-center h2 {
-                font-size: 35px;
-                font-family:  STKaiti;
-                color: rgba(0,0,0,.8);
-            }
+    .post-preview-poetry #first-post {
+        .post-subtitle {
+            letter-spacing: 6px;
+            font-size: 18px;
+            font-family: unset;
+            font-weight: 400;
+            color: rgba(0,0,0,.75)
         }
         /*诗词标题*/
-        &:nth-of-type(1) .post-meta {color: #0e2231;}
+        .post-title {
+            font-size: 35px;
+            font-family:  STKaiti;
+            color: rgba(0,0,0,.8);
+        }
+        .post-meta {color: #0e2231;}
     }
 }
 
 @media (max-width: 768px) {
     .custon-haojen-container {
-        .post-preview {
-            &::nth-child(1) {
-                height: 240px;
-                .post-subtitle{
-                    font-size: 18px;
-                    font-weight:400;
-                    padding-left: 0;padding-right: 0;
-                }
+        .post-preview #first-post {
+            padding: 20px;
+            height: 240px;
+            .post-subtitle {
+                font-size: 18px;
+                font-weight:400;
+                padding-left: 0;
+                padding-right: 0;
             }
-            &:nth-of-type(1) > .align-center {padding: 20px;}
         }
-        .post-preview-poetry:nth-child(1) h2{
+        .post-preview-poetry #first-post .post-title {
             font-size: 28px!important;
             margin-top: 0;
         }
@@ -90,11 +88,11 @@
 /*手机屏幕*/
 @media (max-width: 400px) {
     .custom-haojen-container {
-        .post-preview:nth-child(1) {
+        .post-preview #first-post {
             height: 195px;
             .post-subtitle {font-size: 16px;}
             .align-center {padding: 30px 20px;}
         }
-        .post-preview-poetry:nth-child(1) h2 {font-size: 20px!important;}
+        .post-preview-poetry #first-post .post-title {font-size: 20px!important;}
     }
 }
