@@ -7,12 +7,11 @@
     
     <title>
         <% if(page.archive) { %>
-          <%= page.year || page.month || __('archive') %> ｜ <%= config.title || (config.author + "\'s Blog") %>
+          <%= page.year || page.month || __('archive') %> ｜ 
         <% } else if (page.title || page.category || page.tag) { %>
-          <%= page.title || page.category || page.tag %> ｜ <%= config.title || (config.author + "\'s Blog") %>
-        <% } else {%>
-          <%= config.title || (config.author + "\'s Blog") %>
-        <% } %>
+          <%= page.title || page.category || page.tag %> ｜ 
+        <% } 
+        <%= config.title || (config.author + "\'s Blog") %>
     </title>
     
     <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
